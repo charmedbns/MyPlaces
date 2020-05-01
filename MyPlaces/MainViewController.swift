@@ -10,11 +10,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let restaurantNames = ["Restor One",
-                           "Restor Two",
-                           "Restor Three",
-                           "Restor Four",
-                           "Restor Five"]
+    let places = Place.getPlaces()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +20,20 @@ class MainViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        return places.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CustomViewCell
-        cell.nameLabel?.text = restaurantNames[indexPath.row]
-        let imageNamed = restaurantNames[indexPath.row]
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
+        let imageNamed = places[indexPath.row].image
         cell.imageOfPlace?.image = UIImage(named: imageNamed)
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.height / 2
         cell.imageOfPlace?.clipsToBounds = true
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
-        
-    }
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue){}
 }
-
