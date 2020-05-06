@@ -6,30 +6,33 @@
 //  Copyright © 2020 Lepa. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-
-struct Place {
-    var name: String
-    var location: String
-    var type: String
-    var image: String
+class Place: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
     
-    static let restaurantNames = ["Restor One",
+    let restaurantNames = ["Restor One",
                                   "Restor Two",
                                   "Restor Three",
                                   "Restor Four",
                                   "Restor Five"]
     
-    static func getPlaces() -> [Place] {
-        var places = [Place]()
+     func savePlaces() {
         
         for place in restaurantNames {
-            places.append(Place(name: place, location: "N-city", type: "Restaurant", image: place))
+            let image = UIImage(named: place)
+            guard let imageData = image?.pngData() else { return }
+            
+            let newPlace = Place()
+            newPlace.name = place
+            newPlace.location = "N-City"
+            newPlace.type = "bar"
+            newPlace.imageData = imageData
+            
+            StorageManager.saveObject(newPlace)
         }
-        
-        return places
     }
 }
-
-
