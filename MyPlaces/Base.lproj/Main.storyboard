@@ -147,20 +147,15 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="Us8-ul-Tpz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="Us8-ul-Tpz">
                                         <rect key="frame" x="0.0" y="488" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Us8-ul-Tpz" id="awz-ph-R5V">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Mg-cp-WLf" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Mg-cp-WLf" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                            <integer key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -169,6 +164,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -222,7 +218,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="254-Yz-CxQ">
-                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
+                                <rect key="frame" x="0.0" y="119" width="414" height="777"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="86" id="afl-p3-UfK" customClass="CustomViewCell" customModule="MyPlaces" customModuleProvider="target">
@@ -291,13 +287,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ktB-7Z-jyO" firstAttribute="bottom" secondItem="254-Yz-CxQ" secondAttribute="bottom" id="Bcz-oF-oTY"/>
-                            <constraint firstItem="ktB-7Z-jyO" firstAttribute="trailing" secondItem="254-Yz-CxQ" secondAttribute="trailing" id="E2E-hd-vTh"/>
-                            <constraint firstItem="254-Yz-CxQ" firstAttribute="top" secondItem="W9Y-jl-6yW" secondAttribute="bottom" id="Moc-ix-5EM"/>
+                            <constraint firstItem="254-Yz-CxQ" firstAttribute="top" secondItem="W9Y-jl-6yW" secondAttribute="bottom" id="M1Q-gg-BIs"/>
+                            <constraint firstItem="254-Yz-CxQ" firstAttribute="leading" secondItem="ktB-7Z-jyO" secondAttribute="leading" id="M6e-DS-2uv"/>
+                            <constraint firstItem="254-Yz-CxQ" firstAttribute="trailing" secondItem="ktB-7Z-jyO" secondAttribute="trailing" id="NjP-u5-BhW"/>
+                            <constraint firstAttribute="bottom" secondItem="254-Yz-CxQ" secondAttribute="bottom" id="VXa-aV-aea"/>
                             <constraint firstItem="W9Y-jl-6yW" firstAttribute="leading" secondItem="ktB-7Z-jyO" secondAttribute="leading" id="bM5-Qe-ZY9"/>
                             <constraint firstItem="W9Y-jl-6yW" firstAttribute="trailing" secondItem="ktB-7Z-jyO" secondAttribute="trailing" id="efb-wM-wba"/>
                             <constraint firstItem="W9Y-jl-6yW" firstAttribute="top" secondItem="ktB-7Z-jyO" secondAttribute="top" id="hF4-Mg-u1n"/>
-                            <constraint firstItem="254-Yz-CxQ" firstAttribute="leading" secondItem="ktB-7Z-jyO" secondAttribute="leading" id="np5-JP-Yik"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktB-7Z-jyO"/>
                     </view>
