@@ -65,11 +65,11 @@ import UIKit
         
         // Load button image
         let filledStarImageConfiguration = UIImage.SymbolConfiguration(pointSize: 44, weight: .light)
-        var filledStar = UIImage(systemName: "star.fill", withConfiguration: filledStarImageConfiguration)
+        let filledStar = UIImage(systemName: "star.fill", withConfiguration: filledStarImageConfiguration)
         let emptyStarImageConfiguration = UIImage.SymbolConfiguration(pointSize: 44, weight: .light)
-        var emptyStar = UIImage(systemName: "star", withConfiguration: emptyStarImageConfiguration)
+        let emptyStar = UIImage(systemName: "star", withConfiguration: emptyStarImageConfiguration)
         let highlightedStarImageConfiguration = UIImage.SymbolConfiguration(pointSize: 44, weight: .light)
-        var highlightedStar = UIImage(systemName: "star.fill", withConfiguration: highlightedStarImageConfiguration)
+        let highlightedStar = UIImage(systemName: "star.fill", withConfiguration: highlightedStarImageConfiguration)
         
         for _ in 0..<starCount {
             // Create the button

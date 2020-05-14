@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0FEA7E62E9CF529E24CE0081 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017DA9C467DEA98B5F5E9FBD /* Pods_MyPlaces.framework */; };
+		8A04CA03246DA53000F5BC15 /* Cosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04CA02246DA53000F5BC15 /* Cosmos.swift */; };
+		8A04CA06246DA85400F5BC15 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 8A04CA05246DA85400F5BC15 /* Cosmos */; };
 		8A1DB3D8245C7F4C0032E05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1DB3D7245C7F4C0032E05C /* AppDelegate.swift */; };
 		8A1DB3DA245C7F4C0032E05C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1DB3D9245C7F4C0032E05C /* SceneDelegate.swift */; };
 		8A1DB3DF245C7F4C0032E05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1DB3DD245C7F4C0032E05C /* Main.storyboard */; };
@@ -23,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		017DA9C467DEA98B5F5E9FBD /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A04CA02246DA53000F5BC15 /* Cosmos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cosmos.swift; sourceTree = "<group>"; };
 		8A1DB3D4245C7F4C0032E05C /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1DB3D7245C7F4C0032E05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A1DB3D9245C7F4C0032E05C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A04CA06246DA85400F5BC15 /* Cosmos in Frameworks */,
 				0FEA7E62E9CF529E24CE0081 /* Pods_MyPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +98,7 @@
 				8A1DB3D9245C7F4C0032E05C /* SceneDelegate.swift */,
 				8A1DB3E2245C7F4C0032E05C /* LaunchScreen.storyboard */,
 				8A1DB3E5245C7F4C0032E05C /* Info.plist */,
+				8A04CA02246DA53000F5BC15 /* Cosmos.swift */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -124,6 +129,9 @@
 			dependencies = (
 			);
 			name = MyPlaces;
+			packageProductDependencies = (
+				8A04CA05246DA85400F5BC15 /* Cosmos */,
+			);
 			productName = MyPlaces;
 			productReference = 8A1DB3D4245C7F4C0032E05C /* MyPlaces.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 8A1DB3CB245C7F4B0032E05C;
+			packageReferences = (
+				8A04CA04246DA85400F5BC15 /* XCRemoteSwiftPackageReference "Cosmos" */,
+			);
 			productRefGroup = 8A1DB3D5245C7F4C0032E05C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A43CE92245D9B1600DF70C9 /* NewPlaceViewController.swift in Sources */,
+				8A04CA03246DA53000F5BC15 /* Cosmos.swift in Sources */,
 				8A1DB3D8245C7F4C0032E05C /* AppDelegate.swift in Sources */,
 				8A1DB3EE245C90A70032E05C /* CustomViewCell.swift in Sources */,
 				8A3458E42465FB9400AF19A8 /* RatingControl.swift in Sources */,
@@ -432,6 +444,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A04CA04246DA85400F5BC15 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A04CA05246DA85400F5BC15 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A04CA04246DA85400F5BC15 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A1DB3CC245C7F4B0032E05C /* Project object */;
 }
