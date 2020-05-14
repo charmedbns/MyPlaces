@@ -21,6 +21,7 @@
 		8A31C37324627F1600E51C09 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31C37224627F1600E51C09 /* StorageManager.swift */; };
 		8A3458E42465FB9400AF19A8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3458E32465FB9400AF19A8 /* RatingControl.swift */; };
 		8A43CE92245D9B1600DF70C9 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43CE91245D9B1600DF70C9 /* NewPlaceViewController.swift */; };
+		8A9C4C97246DB6BC00D72B38 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C4C96246DB6BC00D72B38 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8A31C37224627F1600E51C09 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8A3458E32465FB9400AF19A8 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		8A43CE91245D9B1600DF70C9 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		8A9C4C96246DB6BC00D72B38 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CDEB4D69129D795AF9C9094C /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		D64279E8C481FC549E0AC083 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				8A1DB3ED245C90A70032E05C /* CustomViewCell.swift */,
 				8A3458E32465FB9400AF19A8 /* RatingControl.swift */,
 				8A43CE91245D9B1600DF70C9 /* NewPlaceViewController.swift */,
+				8A9C4C96246DB6BC00D72B38 /* MapViewController.swift */,
 				8A1DB3DD245C7F4C0032E05C /* Main.storyboard */,
 				8A1DB3E0245C7F4C0032E05C /* Assets.xcassets */,
 				8A1DB3D7245C7F4C0032E05C /* AppDelegate.swift */,
@@ -235,6 +238,7 @@
 				8A43CE92245D9B1600DF70C9 /* NewPlaceViewController.swift in Sources */,
 				8A04CA03246DA53000F5BC15 /* Cosmos.swift in Sources */,
 				8A1DB3D8245C7F4C0032E05C /* AppDelegate.swift in Sources */,
+				8A9C4C97246DB6BC00D72B38 /* MapViewController.swift in Sources */,
 				8A1DB3EE245C90A70032E05C /* CustomViewCell.swift in Sources */,
 				8A3458E42465FB9400AF19A8 /* RatingControl.swift in Sources */,
 				8A31C37324627F1600E51C09 /* StorageManager.swift in Sources */,
