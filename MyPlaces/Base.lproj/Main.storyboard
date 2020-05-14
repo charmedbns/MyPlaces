@@ -276,10 +276,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="acl-9c-dq7"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="7Xb-Bp-hLR" id="L3O-tm-fVE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ8-gF-OQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2291.304347826087" y="118.52678571428571"/>
+            <point key="canvasLocation" x="2300" y="119"/>
         </scene>
         <!--MyPlaces-->
         <scene sceneID="B0V-wn-7cH">
