@@ -264,10 +264,23 @@
                                     <action selector="closeVC" destination="j6O-cR-LMU" eventType="touchUpInside" id="Xsg-St-Y9b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNj-Kk-JYf">
+                                <rect key="frame" x="359" y="648" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="tgq-jC-oj9"/>
+                                    <constraint firstAttribute="height" constant="40" id="zE3-ct-LN8"/>
+                                </constraints>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="j6O-cR-LMU" eventType="touchUpInside" id="QKy-zw-VGx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="acl-9c-dq7" firstAttribute="bottom" secondItem="BNj-Kk-JYf" secondAttribute="bottom" constant="120" id="52r-w8-uhq"/>
                             <constraint firstItem="acl-9c-dq7" firstAttribute="trailing" secondItem="BEj-3n-ExQ" secondAttribute="trailing" constant="20" id="5rM-gg-bf2"/>
+                            <constraint firstItem="acl-9c-dq7" firstAttribute="trailing" secondItem="BNj-Kk-JYf" secondAttribute="trailing" constant="15" id="923-JK-EDg"/>
                             <constraint firstItem="7Xb-Bp-hLR" firstAttribute="top" secondItem="jH3-yu-on1" secondAttribute="top" id="Il8-1J-Ru9"/>
                             <constraint firstAttribute="bottom" secondItem="7Xb-Bp-hLR" secondAttribute="bottom" id="Jbf-Rb-01u"/>
                             <constraint firstItem="7Xb-Bp-hLR" firstAttribute="trailing" secondItem="acl-9c-dq7" secondAttribute="trailing" id="cfz-qf-gN7"/>
@@ -485,6 +498,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="camcel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>

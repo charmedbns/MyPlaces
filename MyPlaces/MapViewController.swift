@@ -8,22 +8,28 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
-
-    var place: Place!
-    let annotationIdentifier = "annotationIdentifier"
     
+    var place = Place()
+    let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         setupPlacemark()
+        checkLocationServices()
     }
+    
     
     @IBAction func closeVC() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func centerViewInUserLocation() {
     }
     
     private func setupPlacemark() {
@@ -47,6 +53,51 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Location Services are Disable",
+                    message: "To enable it go: Settings → Privacy → Services and turn On"
+                )
+            }
+        }
+    }
+    
+    private func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            //show alert
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            //show alert
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("New case is availabel")
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
+    }
+    
+    private func  setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -68,5 +119,11 @@ extension MapViewController: MKMapViewDelegate {
         
         
         return annotationView
+    }
+}
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
 }
