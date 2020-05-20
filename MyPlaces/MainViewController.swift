@@ -19,8 +19,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
     }
-    
-    var isFiltering: Bool {
+     private var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
     
@@ -34,6 +33,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         places = realm.objects(Place.self)
+        
         // Setup the search controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
