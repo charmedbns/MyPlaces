@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentAddressLabel.text = ""
         mapView.delegate = self
         setupMapView()
         checkLocationServices()
@@ -108,13 +109,6 @@ class MapViewController: UIViewController {
         }
     }
     
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(alertAction)
-        present(alert, animated: true)
-    }
-    
     private func  setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -127,6 +121,20 @@ class MapViewController: UIViewController {
                                                    longitudinalMeters: regionInMeters)
                    mapView.setRegion(region, animated: true)
                }
+    }
+    
+    private func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
     }
 }
 
@@ -150,6 +158,33 @@ extension MapViewController: MKMapViewDelegate {
         
         return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let placemarks = placemarks else { return }
+            let placemark = placemarks.first
+            let streetName = placemark?.thoroughfare
+            let buildNumber = placemark?.subThoroughfare
+            
+            DispatchQueue.main.async {
+                if streetName != nil && buildNumber != nil {
+                    self.currentAddressLabel.text = "\(streetName!), \(buildNumber!)"
+                } else if streetName != nil {
+                    self.currentAddressLabel.text = "\(streetName!)"
+                } else {
+                    self.currentAddressLabel.text = ""
+                }
+            }
+        }
+    }
+    
 }
 extension MapViewController: CLLocationManagerDelegate {
     
