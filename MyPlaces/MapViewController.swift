@@ -10,9 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewControllerDelegate {
+    func getAddress(_ address: String?)
+}
+
 class MapViewController: UIViewController {
     
+    var mapViewControllerDelegate: MapViewControllerDelegate?
     var place = Place()
+    
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeters = 1_000.0
@@ -50,7 +56,8 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
-        
+        mapViewControllerDelegate?.getAddress(currentAddressLabel.text)
+        dismiss(animated: true, completion: nil)
     }
     
     private func setupPlacemark() {
